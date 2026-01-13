@@ -1,0 +1,660 @@
+/* CSS Variables */
+:root {
+  --color-saffron: #ff6b00;
+  --color-saffron-light: #ff8533;
+  --color-saffron-dark: #cc5500;
+  --color-gold: #d4a853;
+  --color-gold-light: #e8c88b;
+  --color-cream: #fff8f0;
+  --color-white: #ffffff;
+  --color-text: #3d2914;
+  --color-text-light: #6b5744;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-saffron);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-saffron);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.dropdown-btn:hover {
+  background: var(--color-cream);
+  color: var(--color-saffron);
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-white);
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: var(--color-cream);
+  color: var(--color-saffron);
+}
+
+.dropdown-content a:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.dropdown-content a:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.language-dropdown {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-saffron);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/placeholder.svg?height=1080&width=1920");
+  background-size: cover;
+  background-position: center;
+  margin-top: 70px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--color-white);
+  padding: 20px;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--color-saffron);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+}
+
+.hero-btn:hover {
+  background: var(--color-saffron-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+}
+
+/* Yatras Section */
+.yatras-section {
+  padding: 100px 0;
+  background: var(--color-white);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.yatras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.yatra-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.yatra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.yatra-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.yatra-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.yatra-card:hover .yatra-image img {
+  transform: scale(1.05);
+}
+
+.yatra-content {
+  padding: 30px;
+}
+
+.yatra-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+.yatra-content p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.yatra-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--color-saffron);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.yatra-btn:hover {
+  background: var(--color-saffron-dark);
+}
+
+/* About Section */
+.about-section {
+  padding: 100px 0;
+  background: var(--color-cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 25px;
+}
+
+.about-content p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.about-features {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-text);
+  color: var(--color-white);
+  padding: 60px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.footer-links h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--color-gold);
+}
+
+.footer-links a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Yatra Detail Page Styles */
+.yatra-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  margin-top: 70px;
+}
+
+.yatra-hero-content {
+  position: relative;
+  text-align: center;
+  color: var(--color-white);
+  padding: 20px;
+}
+
+.yatra-hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.yatra-hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Map Section */
+.map-section {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+.map-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--color-text);
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Yatra Info Section */
+.yatra-info-section {
+  padding: 80px 0;
+  background: var(--color-cream);
+}
+
+.yatra-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.info-card {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.info-card p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: var(--color-saffron);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 40px auto;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background: var(--color-saffron-dark);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .yatras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .yatra-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: var(--color-cream);
+    border-radius: 8px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height 0.3s;
+  }
+
+  .dropdown.active .dropdown-content {
+    max-height: 500px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-features {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .map-container {
+    height: 350px;
+  }
+
+  .yatra-hero-content h1 {
+    font-size: 2rem;
+  }
+}

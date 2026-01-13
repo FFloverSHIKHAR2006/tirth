@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>84 Kos Yatra - Yatra Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🙏</span>
+        <span data-translate="logo">Yatra Portal</span>
+      </a>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link" data-translate="home">Home</a>
+        
+        <!-- Events Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn" data-translate="events">Events / यात्रा</button>
+          <div class="dropdown-content">
+            <a href="84-kos-yatra.html" data-translate="84kosYatra">84 Kos Yatra</a>
+            <a href="namisharanya-yatra.html" data-translate="namisharanyaYatra">Namisharanya Yatra</a>
+          </div>
+        </div>
+        
+        <!-- Language Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn" data-translate="language">Language / भाषा</button>
+          <div class="dropdown-content language-dropdown">
+            <a href="#" onclick="setLanguage('en')">English</a>
+            <a href="#" onclick="setLanguage('hi')">हिन्दी</a>
+            <a href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a>
+            <a href="#" onclick="setLanguage('ml')">മലയാളം</a>
+            <a href="#" onclick="setLanguage('ta')">தமிழ்</a>
+            <a href="#" onclick="setLanguage('te')">తెలుగు</a>
+            <a href="#" onclick="setLanguage('mr')">मराठी</a>
+            <a href="#" onclick="setLanguage('as')">অসমীয়া</a>
+            <a href="#" onclick="setLanguage('pa')">ਪੰਜਾਬੀ</a>
+            <a href="#" onclick="setLanguage('or')">ଓଡ଼ିଆ</a>
+            <a href="#" onclick="setLanguage('gu')">ગુજરાતી</a>
+            <a href="#" onclick="setLanguage('bn')">বাংলা</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Yatra Hero Section -->
+  <section class="yatra-hero" style="background-image: url('/placeholder.svg?height=800&width=1920');">
+    <div class="hero-overlay"></div>
+    <div class="yatra-hero-content">
+      <h1 data-translate="84kosYatraTitle">84 Kos Yatra</h1>
+      <p data-translate="84kosHeroDesc">The sacred 84 Kos Parikrama around Mathura-Vrindavan</p>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <h2 data-translate="pilgrimageRoute">Pilgrimage Route</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d227748.38271522!2d77.51234567890123!3d27.492412345678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x39737302e838c5f5%3A0x8d4e02c2f4e27c0!2sMathura%2C%20Uttar%20Pradesh!3m2!1d27.4924285!2d77.6737291!4m5!1s0x39736e7e7f2e8c3d%3A0x7f3b5f7e7e7e7e7e!2sVrindavan%2C%20Uttar%20Pradesh!3m2!1d27.5799!2d77.7022!4m5!1s0x39736e7e7f2e8c3d%3A0x9f3b5f7e7e7e7e7e!2sBarsana%2C%20Uttar%20Pradesh!3m2!1d27.6472!2d77.3764!4m5!1s0x39737302e838c5f5%3A0x8d4e02c2f4e27c0!2sMathura%2C%20Uttar%20Pradesh!3m2!1d27.4924285!2d77.6737291!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yatra Info Section -->
+  <section class="yatra-info-section">
+    <div class="container">
+      <div class="yatra-info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📍</div>
+          <h3 data-translate="routeInfo">Route Information</h3>
+          <p data-translate="84kosRouteInfo">The parikrama covers 252 km around Mathura-Vrindavan, passing through 12 sacred forests and numerous temples.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🙏</div>
+          <h3 data-translate="significance">Significance</h3>
+          <p data-translate="84kosSignificance">This yatra recreates Lord Krishna's divine pastimes and offers liberation to devotees who complete it with devotion.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📅</div>
+          <h3 data-translate="bestTime">Best Time</h3>
+          <p data-translate="84kosBestTime">Kartik month (October-November) is considered most auspicious for this sacred journey.</p>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="index.html" class="back-btn" data-translate="backToHome">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 data-translate="logo">Yatra Portal</h3>
+          <p data-translate="footerTagline">Your gateway to sacred pilgrimages and spiritual journeys across India.</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-translate="events">Events</h4>
+          <a href="84-kos-yatra.html" data-translate="84kosYatra">84 Kos Yatra</a>
+          <a href="namisharanya-yatra.html" data-translate="namisharanyaYatra">Namisharanya Yatra</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-translate="copyright">© 2026 Yatra Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

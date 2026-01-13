@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namisharanya Yatra - Yatra Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🙏</span>
+        <span data-translate="logo">Yatra Portal</span>
+      </a>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link" data-translate="home">Home</a>
+        
+        <!-- Events Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn" data-translate="events">Events / यात्रा</button>
+          <div class="dropdown-content">
+            <a href="84-kos-yatra.html" data-translate="84kosYatra">84 Kos Yatra</a>
+            <a href="namisharanya-yatra.html" data-translate="namisharanyaYatra">Namisharanya Yatra</a>
+          </div>
+        </div>
+        
+        <!-- Language Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn" data-translate="language">Language / भाषा</button>
+          <div class="dropdown-content language-dropdown">
+            <a href="#" onclick="setLanguage('en')">English</a>
+            <a href="#" onclick="setLanguage('hi')">हिन्दी</a>
+            <a href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a>
+            <a href="#" onclick="setLanguage('ml')">മലയാളം</a>
+            <a href="#" onclick="setLanguage('ta')">தமிழ்</a>
+            <a href="#" onclick="setLanguage('te')">తెలుగు</a>
+            <a href="#" onclick="setLanguage('mr')">मराठी</a>
+            <a href="#" onclick="setLanguage('as')">অসমীয়া</a>
+            <a href="#" onclick="setLanguage('pa')">ਪੰਜਾਬੀ</a>
+            <a href="#" onclick="setLanguage('or')">ଓଡ଼ିଆ</a>
+            <a href="#" onclick="setLanguage('gu')">ગુજરાતી</a>
+            <a href="#" onclick="setLanguage('bn')">বাংলা</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Yatra Hero Section -->
+  <section class="yatra-hero" style="background-image: url('/placeholder.svg?height=800&width=1920');">
+    <div class="hero-overlay"></div>
+    <div class="yatra-hero-content">
+      <h1 data-translate="namisharanyaYatraTitle">Namisharanya Yatra</h1>
+      <p data-translate="namisharanyaHeroDesc">Journey to the sacred forest where sages received divine knowledge</p>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <h2 data-translate="pilgrimageRoute">Pilgrimage Route</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14167.789012345678!2d80.45123456789012!3d27.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399f3b7e7e7e7e7e%3A0x7e7e7e7e7e7e7e7e!2sNaimisharanya%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yatra Info Section -->
+  <section class="yatra-info-section">
+    <div class="container">
+      <div class="yatra-info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📍</div>
+          <h3 data-translate="routeInfo">Route Information</h3>
+          <p data-translate="namisharanyaRouteInfo">Located in Sitapur district of Uttar Pradesh, the yatra covers the sacred Chakratirtha and 88 holy spots.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🙏</div>
+          <h3 data-translate="significance">Significance</h3>
+          <p data-translate="namisharanyaSignificance">Where 88,000 rishis performed the famous Satra yajna and where Ved Vyasa narrated the Puranas.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📅</div>
+          <h3 data-translate="bestTime">Best Time</h3>
+          <p data-translate="namisharanyaBestTime">Phalgun month (February-March) during the Maha Shivratri period is ideal for this pilgrimage.</p>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="index.html" class="back-btn" data-translate="backToHome">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 data-translate="logo">Yatra Portal</h3>
+          <p data-translate="footerTagline">Your gateway to sacred pilgrimages and spiritual journeys across India.</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-translate="events">Events</h4>
+          <a href="84-kos-yatra.html" data-translate="84kosYatra">84 Kos Yatra</a>
+          <a href="namisharanya-yatra.html" data-translate="namisharanyaYatra">Namisharanya Yatra</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-translate="copyright">© 2026 Yatra Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
