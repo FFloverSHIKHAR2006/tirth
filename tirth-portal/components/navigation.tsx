@@ -26,7 +26,7 @@ const languages: { code: Language; label: string }[] = [
 ]
 
 export function Navigation() {
-  const { language, setLanguage, t } = useLanguage()
+  const { language, setLanguage, t, isTranslating } = useLanguage()
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -149,15 +149,15 @@ export function Navigation() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex items-center gap-2 text-xs font-semibold rounded-xl border-border/80 bg-background/50 hover:bg-accent"
+                  className="flex items-center gap-2 text-xs font-semibold rounded-xl border-border/80 bg-background/50 hover:bg-accent notranslate"
                   aria-label={`Select Language. Current: ${currentLangLabel}`}
                 >
-                  <Globe className="w-3.5 h-3.5 text-primary" />
+                  <Globe className={`w-3.5 h-3.5 text-primary ${isTranslating ? "animate-spin text-amber-500" : ""}`} />
                   <span>{currentLangLabel}</span>
                   <ChevronDown className="w-3 h-3 opacity-60" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 max-h-80 overflow-y-auto p-2 rounded-2xl shadow-xl border-border/80">
+              <DropdownMenuContent align="end" className="w-56 max-h-80 overflow-y-auto p-2 rounded-2xl shadow-xl border-border/80 notranslate">
                 <div className="px-2 py-1.5 text-xs font-bold text-muted-foreground border-b border-border/60 mb-1">
                   {t("navLanguage")}
                 </div>
@@ -272,7 +272,7 @@ export function Navigation() {
                   <Globe className="w-3.5 h-3.5 text-primary" />
                   {t("navLanguage")}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 notranslate">
                   {languages.map((lang) => {
                     const isSelected = language === lang.code
                     return (

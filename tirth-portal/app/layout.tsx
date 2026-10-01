@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Noto_Sans, Noto_Serif } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/context/language-context"
+import { GoogleTranslateLoader } from "@/components/google-translate"
 import "./globals.css"
 
 const notoSans = Noto_Sans({
@@ -88,6 +89,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-background text-foreground min-h-screen flex flex-col">
         <LanguageProvider>
           {children}
+          <GoogleTranslateLoader />
         </LanguageProvider>
         <Analytics />
       </body>

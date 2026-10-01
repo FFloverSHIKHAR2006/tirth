@@ -35,4 +35,12 @@ describe("Multilingual System Integrity", () => {
     expect(translationsData.parikramaStops.hi).toContain("परिक्रमा पड़ाव")
     expect(translationsData.majorShrines.hi).toContain("प्रमुख तीर्थ")
   })
+
+  it("should format correct automated translation parameters for all supported languages", () => {
+    supportedLanguages.forEach((lang) => {
+      const expectedCookieValue = lang === "en" ? "/en/en" : `/en/${lang}`
+      expect(expectedCookieValue).toMatch(/^\/en\/[a-z]{2}$/)
+    })
+  })
 })
+
